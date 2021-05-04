@@ -1,21 +1,12 @@
-object Closure {
-  def main(args: Array[String]): Unit = {
-//    result = rateHandler(10)
-//    println(result)
-//    changeRate(2)
-//    rateHandler(10)
-//    println(result)
-//    rateHandler(20)
-//    println(result)
-//    rateHandler(30)
-//    println(result)
-  }
 
+object Closure {
   /** Part 1 */
-  val factor = 10
+  var factor = 10
   def multiplication(a: Int): Int = {
     a * factor
   }
+
+  val changeFactor: Int => Unit = (newFactor: Int) => factor = newFactor
 
   val adder: Int => Int = (a: Int) => a + factor
 
@@ -36,5 +27,14 @@ object Closure {
     } else {
       result
     }
+  }
+
+  /** Part 3 */
+  var day = 5
+
+  val setDay: Int => Unit = (newDay) => day = newDay
+
+  def printDay(whichDay: Int): String = {
+    s"Currently it is day $whichDay"
   }
 }
