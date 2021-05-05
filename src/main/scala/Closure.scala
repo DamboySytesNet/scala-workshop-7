@@ -32,9 +32,9 @@ object Closure {
   /** Part 3 */
   var day = 5
 
-  val setDay: Int => Unit = (newDay) => day = newDay
+  val setDay: Int => Unit = newDay => day = newDay
 
-  def printDay(whichDay: Int): String = {
-    s"Currently it is day $whichDay"
+  def printDay(): String = {
+    s"Currently it is day $day"
   }
 }

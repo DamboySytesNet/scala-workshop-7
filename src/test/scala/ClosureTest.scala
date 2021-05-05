@@ -39,16 +39,16 @@ class ClosureTest extends AnyFunSuite {
   test("Using class from different package (scope)") {
     Closure.setDay(5)
     val otherScope = new ClosureOtherScope
-    var result = otherScope.doTask(Closure.printDay, Closure.day)
+    var result = otherScope.doTask(Closure.printDay)
 
     assert(result === s"Currently it is day 5")
 
     Closure.setDay(1)
-    result = otherScope.doTask(Closure.printDay, Closure.day)
+    result = otherScope.doTask(Closure.printDay)
 
     assert(result === s"Currently it is day 1")
 
-    result = otherScope.doTask(Closure.printDay, Closure.day)
+    result = otherScope.doTask(Closure.printDay)
 
     assert(result === s"Currently it is day 1")
   }
