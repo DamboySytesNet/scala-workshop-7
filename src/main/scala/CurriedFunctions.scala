@@ -21,4 +21,28 @@ object CurriedFunctions {
   def addToPointsShort(x: Int, y: Int)(r: Int): (Int, Int) = {
     (x + r, y + r)
   }
+
+  /** Zadanie 1
+   *
+   * Napisz funkcję, której wywołanie będzie wyglądało
+   * w sposób następujący:
+   *
+   * val a = myMethod(5, _: Int)(_: Int, 3)
+   * val b = a(2, 10)
+   * // (5 + 2) * (3 * 10) = 210
+   *
+   * oraz jej zadaniem będzie zsumowanie argumentów
+   * w pierwszym nawiasie i pomnożenie ich przez
+   * iloczyn liczb podanych w drugim nawiasie
+   */
+
+  /** Zadanie 2
+   *
+   * Zmodyfikuj składnię funkcji poniżej na jej
+   * dłuższy odpowiednik
+   *
+   * def addition(a: Int)(b: Int, c: Int, d: Int): Int = {
+   *   a * (b + c + d)
+   * }
+   */
 }
