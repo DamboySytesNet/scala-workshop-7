@@ -26,9 +26,4 @@ object PartiallyAppliedFunctions {
     def discount(price: Float, discount: Float): Float = {
       price * (100 - discount) / 100
     }
-
-    /** Part 6 */
-    def plus(a: Int, b: Int): Int = {
-      a + b
-    }
 }

@@ -34,6 +34,13 @@ class PartiallyAppliedFunctionsTest extends AnyFunSuite {
     assert(f"$result%.1f" === "1.7")
   }
 
+  test("Partially applied function, without types") {
+    val add = PartiallyAppliedFunctions.ratioDivider(3, _)
+    val result = add(3)
+
+    assert(result === 2)
+  }
+
   test("Partially applied function, without parameters") {
     val price = PartiallyAppliedFunctions.discount _
     val discountedBy = price(300, _: Float)
@@ -42,17 +49,10 @@ class PartiallyAppliedFunctionsTest extends AnyFunSuite {
     assert(result === 270)
   }
 
-  test("Partially applied function, without types") {
-    val add = PartiallyAppliedFunctions.ratioDivider(3, _)
-    val result = add(3)
-
-    assert(result === 2)
-  }
-
   test("Partially applied function, with curring approach") {
-    val add = (PartiallyAppliedFunctions.plus _).curried
-    val result = add(3)(5)
+    val add = (PartiallyAppliedFunctions.discount _).curried
+    val result = add(100)(10)
 
-    assert(result === 8)
+    assert(result === 90)
   }
 }

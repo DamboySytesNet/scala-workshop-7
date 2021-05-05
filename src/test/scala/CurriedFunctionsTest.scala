@@ -26,9 +26,9 @@ class CurriedFunctionsTest extends AnyFunSuite {
   }
 
   test("Curried function (long) multiplying five values partially divided into two functions") {
-    val firstHalf = CurriedFunctions.fiveD(2)(2)(2)
-    val secondHalf = firstHalf(3)(3)
-    assert(secondHalf === 72)
+    val secondHalf = CurriedFunctions.fiveD(2)(2)(2)
+    val result = secondHalf(3)(3)
+    assert(result === 72)
   }
 
   test("Curried function (long) multiplying values divided into two sections") {
