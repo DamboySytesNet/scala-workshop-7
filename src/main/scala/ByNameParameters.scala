@@ -21,4 +21,21 @@ object ByNameParameters {
     y
   }
 
+  /**
+   * Zadanie 3
+   * Jaki wynik zwróci funZ(incrementValue())?
+   * Jaka jest wartość value po wywołaniu powyższej funkcji?
+   */
+
+  var value = 2
+
+  def incrementValue(): Int = {
+    value += 1
+    value
+  }
+
+  def funZ(z: => Int): Int = {
+    z * z * z
+  }
+
 }

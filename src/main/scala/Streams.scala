@@ -14,7 +14,7 @@ object Streams {
   }
 
   //these methods always create new collections
-  def transformerMethods() = {
+  def transformerMethods(): Stream[Int] = {
     val stream = (1 to 25).toStream
       .map(_ * 2)
       .filter(_ % 10 == 0)
@@ -22,4 +22,13 @@ object Streams {
       .take(3)
     stream
   }
+
+  /**
+   * Zadanie 4
+   * Dana jest lista = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+   * Korzystając ze strumieni przekształć podaną listę na:
+   * {h, g, e, d, b, a}
+   *
+   * Podpowiedź: podzielność przez 3 i ascii :)
+   */
 }
