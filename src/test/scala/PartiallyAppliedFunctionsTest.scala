@@ -31,7 +31,7 @@ class PartiallyAppliedFunctionsTest extends AnyFunSuite {
   test("Partially applied function, with missing parameters not in order, as closure") {
     val args = PartiallyAppliedFunctions.ratioDivider(_: Int, 3)
     val result = args(2)
-    assert((math rint result * 10) / 10 === 1.7)
+    assert((math rint result * 10) / 10f === 1.7)
   }
 
   test("Partially applied function, without types") {

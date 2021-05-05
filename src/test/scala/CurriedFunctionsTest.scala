@@ -3,14 +3,14 @@ import org.scalatest.funsuite.AnyFunSuite
 class CurriedFunctionsTest extends AnyFunSuite {
   test("Curried function (short) summing three values") {
     val sum = CurriedFunctions.addition(1)(2.3f)(3.02)
-    assert((math rint sum * 100) / 100 === 6.32)
+    assert((math rint sum * 100) / 100f === 6.32)
   }
 
   test("Curried function (short) summing three values  divided into three functions") {
     val firstPart = CurriedFunctions.addition(2)_
     val almostSummed = firstPart(0.09f)
     val sum = almostSummed(1.05)
-    assert((math rint sum * 100) / 100 === 3.14)
+    assert((math rint sum * 100) / 100f === 3.14)
   }
 
   test("Curried function (long) multiplying three values") {
